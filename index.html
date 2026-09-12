@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ტაქსის გამოძახება</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9;}
+        .container { max-width: 400px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        button { background-color: #f5b041; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 5px; cursor: pointer; width: 100%;}
+        button:active { background-color: #e67e22; }
+        #status-msg { margin-top: 20px; font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>გამარჯობა!</h2>
+        <p>დააჭირე ღილაკს ტაქსის გამოსაძახებლად</p>
+        
+        <button id="call-taxi-btn">🚕 ტაქსის გამოძახება</button>
+        <div id="status-msg"></div>
+    </div>
+
+    <!-- ვაკავშირებთ ჩვენს JavaScript ლოგიკას -->
+    <script type="module" src="passenger.js"></script>
+    
+</body>
+</html>
