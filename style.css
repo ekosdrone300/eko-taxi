@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;600;700&display=swap');
+
+body, html { margin: 0; padding: 0; height: 100vh; height: 100dvh; font-family: 'Noto Sans Georgian', sans-serif; overflow: hidden; background: #e0eaf5; }
+
+.screen { height: 100%; width: 100vw; display: flex; justify-content: center; align-items: center; position: relative; }
+
+/* ავტორიზაცია */
+.auth-box { background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 85%; max-width: 350px; text-align: center; }
+.auth-box h2 { margin: 0 0 5px 0; color: #1e272e; font-size: 24px; }
+.auth-subtitle { color: #7f8c8d; font-size: 14px; margin-bottom: 25px; }
+
+input { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #d2dae2; border-radius: 12px; font-size: 16px; font-family: inherit; outline: none; transition: 0.3s; box-sizing: border-box; }
+input:focus { border-color: #f39c12; }
+
+/* ღილაკები */
+.action-btn { background: #f39c12; color: white; border: none; padding: 18px; width: 100%; font-size: 18px; font-weight: 600; border-radius: 12px; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4); }
+.action-btn:active { transform: translateY(2px); }
+.action-btn:disabled { background: #bdc3c7; box-shadow: none; }
+
+.cancel-btn { background: none; border: none; color: #e74c3c; width: 100%; padding: 15px; margin-top: 10px; font-weight: 600; font-size: 16px; cursor: pointer; }
+
+/* რუკა და პანელები */
+#map { height: 100%; width: 100%; position: absolute; top: 0; left: 0; z-index: 1; }
+
+.top-bar { position: absolute; top: 20px; left: 5%; width: 90%; background: white; padding: 12px 20px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 1000; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; }
+.user-info { display: flex; align-items: center; gap: 12px; }
+.avatar { width: 38px; height: 38px; background: #f39c12; color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px; }
+.user-name { font-weight: 600; color: #2c3e50; font-size: 16px; margin: 0; }
+.logout-btn { background: rgba(231, 76, 60, 0.1); border: none; color: #e74c3c; font-weight: 600; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+
+/* ცენტრალური პინი */
+.center-pin { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -100%); z-index: 1000; pointer-events: none; transition: transform 0.2s; }
+.center-pin::after { content: '📍'; font-size: 45px; text-shadow: 0 5px 10px rgba(0,0,0,0.3); }
+.center-pin.moving { transform: translate(-50%, -120%); }
+
+/* ქვედა პანელი (ჩასწორებული ზომები) */
+.bottom-panel { position: absolute; bottom: 0; left: 0; width: 100%; background: white; border-radius: 25px 25px 0 0; padding: 25px 20px max(30px, env(safe-area-inset-bottom)); box-sizing: border-box; z-index: 1000; box-shadow: 0 -10px 25px rgba(0,0,0,0.05); text-align: center; }
+.panel-title { color: #1e272e; margin: 0 0 5px 0; font-size: 20px; font-weight: 700; }
+.panel-subtitle { color: #7f8c8d; margin: 0 0 20px 0; font-size: 14px; }
+
+/* მარშრუტის ინფო ბლოკი */
+#route-info { display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #eee;}
+.info-box { text-align: center; font-size: 14px; color: #7f8c8d; }
+.info-box strong { color: #2c3e50; font-size: 18px; display: block; margin-top: 5px; }
+
+/* მარშრუტის ტექსტის (ზედმეტი ფანჯრის) დამალვა რუკაზე */
+.leaflet-routing-container { display: none !important; }

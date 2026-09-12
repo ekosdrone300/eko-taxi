@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eko Taxi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- მარშრუტების გამოსათვლელი ბიბლიოთეკა -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+</head>
+<body>
+
+    <!-- ეკრანი 1: ავტორიზაცია -->
+    <div id="auth-screen" class="screen">
+        <div class="auth-box">
+            <h2>Eko Taxi</h2>
+            <p class="auth-subtitle">გაიარეთ ავტორიზაცია</p>
+            <input type="text" id="name-input" placeholder="თქვენი სახელი">
+            <input type="tel" id="phone-input" placeholder="ტელეფონი (მაგ: 599...)" value="5">
+            <button id="login-btn" class="action-btn">აპლიკაციაში შესვლა</button>
+            <div id="error-msg" style="color: #e74c3c; font-size: 13px; margin-top: 15px;"></div>
+        </div>
+    </div>
+
+    <!-- ეკრანი 2: მთავარი რუკა -->
+    <div id="app-screen" class="screen" style="display: none;">
+        
+        <div class="top-bar">
+            <div class="user-info">
+                <div class="avatar" id="user-avatar">?</div>
+                <p class="user-name" id="display-name">მომხმარებელი</p>
+            </div>
+            <button id="logout-btn" class="logout-btn">გასვლა</button>
+        </div>
+
+        <div id="map"></div>
+        <div class="center-pin" id="center-pin"></div>
+        
+        <!-- ქვედა პანელი (განახლებული) -->
+        <div class="bottom-panel">
+            <h3 class="panel-title" id="panel-title">საიდან მივდივართ?</h3>
+            <p class="panel-subtitle" id="panel-subtitle">მონიშნეთ საწყისი ლოკაცია</p>
+            
+            <!-- მარშრუტის ინფორმაცია (დრო, მანძილი, ფასი) -->
+            <div id="route-info" style="display: none;">
+                <div class="info-box"><span>🛣️</span><br><strong id="route-dist">0 კმ</strong></div>
+                <div class="info-box"><span>⏱️</span><br><strong id="route-time">0 წთ</strong></div>
+                <div class="info-box"><span>💰</span><br><strong id="route-price">0 ₾</strong></div>
+            </div>
+
+            <button id="main-btn" class="action-btn">📍 დადასტურება</button>
+            <button id="cancel-btn" class="cancel-btn" style="display: none;">გაუქმება</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script type="module" src="passenger.js"></script>
+</body>
+</html>
