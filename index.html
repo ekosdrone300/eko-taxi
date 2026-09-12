@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Eko Taxi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet-ის CSS ამოღებულია -->
+</head>
+<body>
+
+    <div id="auth-screen" class="screen">
+        <div class="auth-box">
+            <h2>Eko Taxi</h2>
+            <p class="auth-subtitle">გაიარეთ ავტორიზაცია</p>
+            <input type="text" id="name-input" placeholder="თქვენი სახელი">
+            <input type="tel" id="phone-input" placeholder="ტელეფონი (მაგ: 599...)" value="5">
+            <button id="login-btn" class="action-btn">აპლიკაციაში შესვლა</button>
+            <div id="error-msg" style="color: #e74c3c; font-size: 13px; margin-top: 15px;"></div>
+        </div>
+    </div>
+
+    <div id="app-screen" class="screen" style="display: none;">
+        <div class="top-bar">
+            <div class="user-info">
+                <div class="avatar" id="user-avatar">?</div>
+                <p class="user-name" id="display-name">მომხმარებელი</p>
+            </div>
+            <button id="logout-btn" class="logout-btn">გასვლა</button>
+        </div>
+
+        <div id="map"></div>
+        <div class="center-pin" id="center-pin"></div>
+        
+        <div class="bottom-panel">
+            <h3 class="panel-title" id="panel-title">საიდან მივდივართ?</h3>
+            <p class="panel-subtitle" id="panel-subtitle">მონიშნეთ საწყისი ლოკაცია</p>
+            
+            <div id="route-info" style="display: none;">
+                <div class="info-box"><span>🛣️</span><br><strong id="route-dist">0 კმ</strong></div>
+                <div class="info-box"><span>⏱️</span><br><strong id="route-time">0 წთ</strong></div>
+                <div class="info-box"><span>💰</span><br><strong id="route-price">0 ₾</strong></div>
+            </div>
+
+            <button id="main-btn" class="action-btn">📍 დადასტურება</button>
+            <button id="cancel-btn" class="cancel-btn" style="display: none;">გაუქმება</button>
+        </div>
+    </div>
+
+    <!-- Google Maps API (ჩაანაცვლე შენი გასაღებით) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZRt4QoVZ0GA4Kzrg47rTJ8rDbRQS1OIk&libraries=places"></script>
+    <script type="module" src="passenger.js"></script>
+</body>
+</html>
